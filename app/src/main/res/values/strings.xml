@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">GettingAndroid</string>
+    <string name="text_person_name">textPersonName</string>
+    <string name="text_password">textPassword</string>
+    <string name="number">number</string>
+    <string name="phone">phone</string>
+    <string name="text_personal_name">textPersonalName</string>
+    <string name="text">text</string>
+    <string name="textview">TextView</string>
+    <string name="name">Name</string>
+    <string name="button">Button</string>
+    <string name="switch_1">switch_1</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="toggle_button">ToggleButton</string>
+    <string name="calc_key_backspace">←</string>
+    <string name="calc_key_c">C</string>
+    <string name="calc_key_7">7</string>
+    <string name="calc_key_8">8</string>
+    <string name="calc_key_9">9</string>
+    <string name="calc_key_4">4</string>
+    <string name="calc_key_5">5</string>
+    <string name="calc_key_6">6</string>
+    <string name="calc_key_1">1</string>
+    <string name="calc_key_2">2</string>
+    <string name="calc_key_3">3</string>
+    <string name="calc_key_0">0</string>
+    <string name="calc_key_plus">+</string>
+    <string name="calc_key_dot">,</string>
+    <string name="calc_key_minus">-</string>
+    <string name="calc_key_multiply">*</string>
+    <string name="calc_key_divide">/</string>
+    <string name="key_equally_btn">=</string>
+</resources>
