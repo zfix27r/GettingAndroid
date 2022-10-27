@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,7 +11,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="text" />
+        android:text="@string/text"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -19,7 +22,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="textPersonalName" />
+        android:text="@string/text_personal_name"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -28,7 +33,9 @@
         android:ems="10"
         android:inputType="phone"
         android:minHeight="48dp"
-        android:text="phone" />
+        android:text="@string/phone"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
@@ -37,7 +44,9 @@
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
-        android:text="number" />
+        android:text="@string/number"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
@@ -46,7 +55,9 @@
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="textPassword" />
+        android:text="@string/text_password"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editTextTextPersonName7"
@@ -55,7 +66,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="textPersonName" />
+        android:text="@string/text_person_name"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <CalendarView
         android:id="@+id/calendarView"
