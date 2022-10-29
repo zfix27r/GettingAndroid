@@ -12,7 +12,7 @@
     <string name="switch_1">switch_1</string>
     <string name="checkbox">CheckBox</string>
     <string name="toggle_button">ToggleButton</string>
-    <string name="calc_key_backspace">←</string>
+    <string name="calc_key_backspace">&lt;</string>
     <string name="calc_key_c">C</string>
     <string name="calc_key_7">7</string>
     <string name="calc_key_8">8</string>
@@ -25,7 +25,7 @@
     <string name="calc_key_3">3</string>
     <string name="calc_key_0">0</string>
     <string name="calc_key_plus">+</string>
-    <string name="calc_key_dot">,</string>
+    <string name="calc_key_dot">.</string>
     <string name="calc_key_minus">-</string>
     <string name="calc_key_multiply">*</string>
     <string name="calc_key_divide">/</string>

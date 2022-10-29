@@ -4,24 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/endless_constellation">
+    android:background="?attr/colorPrimaryVariant">
 
-    <TextView
-        android:id="@+id/window_tv"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#9F000000"
-        app:layout_constraintBottom_toTopOf="@+id/key_backspace_btn"
-        app:layout_constraintEnd_toEndOf="@+id/key_divide_btn"
-        app:layout_constraintStart_toStartOf="@+id/key_c_btn"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/calculation_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:fontFamily="monospace"
+            android:gravity="right"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/key_backspace_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_backspace"
         app:layout_constraintBottom_toTopOf="@+id/key_7_btn"
         app:layout_constraintEnd_toEndOf="@+id/key_9_btn"
@@ -29,8 +48,7 @@
 
     <Button
         android:id="@+id/key_c_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_c"
         app:layout_constraintEnd_toEndOf="@+id/key_8_btn"
         app:layout_constraintStart_toStartOf="@+id/key_7_btn"
@@ -38,8 +56,7 @@
 
     <Button
         android:id="@+id/key_7_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_7"
         app:layout_constraintBottom_toTopOf="@+id/key_4_btn"
         app:layout_constraintEnd_toEndOf="@+id/key_4_btn"
@@ -47,17 +64,15 @@
 
     <Button
         android:id="@+id/key_8_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_8"
-        app:layout_constraintEnd_toEndOf="@+id/button9"
-        app:layout_constraintStart_toStartOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="@+id/key_5_btn"
+        app:layout_constraintStart_toStartOf="@+id/key_5_btn"
         app:layout_constraintTop_toTopOf="@+id/key_7_btn" />
 
     <Button
         android:id="@+id/key_9_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_9"
         app:layout_constraintEnd_toEndOf="@+id/key_6_btn"
         app:layout_constraintStart_toStartOf="@+id/key_6_btn"
@@ -65,26 +80,23 @@
 
     <Button
         android:id="@+id/key_4_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_4"
         app:layout_constraintBottom_toTopOf="@+id/key_1_btn"
         app:layout_constraintEnd_toEndOf="@+id/key_1_btn"
         app:layout_constraintStart_toStartOf="@+id/key_1_btn" />
 
     <Button
-        android:id="@+id/button9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/key_5_btn"
+        style="@style/Button"
         android:text="@string/calc_key_5"
-        app:layout_constraintEnd_toEndOf="@+id/button12"
-        app:layout_constraintStart_toStartOf="@+id/button12"
+        app:layout_constraintEnd_toEndOf="@+id/key_2_btn"
+        app:layout_constraintStart_toStartOf="@+id/key_2_btn"
         app:layout_constraintTop_toTopOf="@+id/key_4_btn" />
 
     <Button
         android:id="@+id/key_6_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_6"
         app:layout_constraintEnd_toEndOf="@+id/key_3_btn"
         app:layout_constraintStart_toStartOf="@+id/key_3_btn"
@@ -92,18 +104,16 @@
 
     <Button
         android:id="@+id/key_1_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_marginStart="8dp"
         android:text="@string/calc_key_1"
         app:layout_constraintBottom_toTopOf="@+id/key_0_btn"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintEnd_toStartOf="@+id/key_2_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/key_2_btn"
+        style="@style/Button"
         android:layout_marginStart="8dp"
         android:text="@string/calc_key_2"
         app:layout_constraintEnd_toStartOf="@+id/key_3_btn"
@@ -112,28 +122,25 @@
 
     <Button
         android:id="@+id/key_3_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_marginStart="8dp"
         android:text="@string/calc_key_3"
         app:layout_constraintEnd_toStartOf="@+id/key_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintStart_toEndOf="@+id/key_2_btn"
         app:layout_constraintTop_toTopOf="@+id/key_1_btn" />
 
     <Button
         android:id="@+id/key_0_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_marginBottom="8dp"
         android:text="@string/calc_key_0"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button12"
+        app:layout_constraintEnd_toEndOf="@+id/key_2_btn"
         app:layout_constraintStart_toStartOf="@+id/key_1_btn" />
 
     <Button
         android:id="@+id/key_plus_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/calc_key_plus"
@@ -143,8 +150,7 @@
 
     <Button
         android:id="@+id/key_dot_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_dot"
         app:layout_constraintEnd_toEndOf="@+id/key_3_btn"
         app:layout_constraintStart_toStartOf="@+id/key_3_btn"
@@ -152,8 +158,7 @@
 
     <Button
         android:id="@+id/key_minus_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_minus"
         app:layout_constraintEnd_toEndOf="@+id/key_plus_btn"
         app:layout_constraintStart_toStartOf="@+id/key_plus_btn"
@@ -161,8 +166,7 @@
 
     <Button
         android:id="@+id/key_multiply_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_multiply"
         app:layout_constraintEnd_toEndOf="@+id/key_minus_btn"
         app:layout_constraintStart_toStartOf="@+id/key_minus_btn"
@@ -170,8 +174,7 @@
 
     <Button
         android:id="@+id/key_divide_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/calc_key_divide"
         app:layout_constraintEnd_toEndOf="@+id/key_multiply_btn"
         app:layout_constraintStart_toStartOf="@+id/key_multiply_btn"
@@ -179,8 +182,7 @@
 
     <Button
         android:id="@+id/key_equally_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        style="@style/Button"
         android:text="@string/key_equally_btn"
         app:layout_constraintEnd_toEndOf="@+id/key_plus_btn"
         app:layout_constraintStart_toStartOf="@+id/key_plus_btn"
