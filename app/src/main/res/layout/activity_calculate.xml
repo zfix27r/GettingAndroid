@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:orientation="vertical"
-        android:padding="8dp"
+        android:padding="@dimen/padding_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,20 +22,20 @@
             android:ellipsize="start"
             android:fontFamily="monospace"
             android:gravity="right"
-            android:padding="4dp"
+            android:padding="@dimen/padding_small"
             android:singleLine="true"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            tools:text="11+23-123" />
 
         <TextView
             android:id="@+id/result_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:padding="4dp"
+            android:padding="@dimen/padding_small"
             android:singleLine="true"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            tools:text="194" />
     </LinearLayout>
 
     <Button
@@ -141,8 +141,8 @@
     <Button
         android:id="@+id/key_plus_btn"
         style="@style/Button"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
         android:text="@string/calc_key_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/key_3_btn"
