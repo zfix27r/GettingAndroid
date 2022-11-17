@@ -1,0 +1,6 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:dependency="sync"
+        app:key="attachment"
+        app:title="@string/settings_dark_theme" />
+</PreferenceScreen>

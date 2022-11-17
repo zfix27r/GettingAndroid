@@ -4,82 +4,65 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import ru.zfix27r.gettingandroid.calculator.Buttons.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var calculation: TextView
+    private lateinit var result: TextView
+
     private val calculator = Calculator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculate)
+        setContentView(R.layout.main_activity)
 
-        init()
-        savedInstanceState?.let { calculator.setSaveInstanceState(it.getString(SAVE_NAME)) }
+        calculation = findViewById(R.id.calculation_tv)
+        result = findViewById(R.id.result_tv)
+
+        findViewById<Button>(R.id.c_btn).setOnClickListener { onPress(C) }
+        findViewById<Button>(R.id.backspace_btn).setOnClickListener { onPress(BACKSPACE) }
+        findViewById<Button>(R.id.one_btn).setOnClickListener { onPress(ONE) }
+        findViewById<Button>(R.id.two_btn).setOnClickListener { onPress(TWO) }
+        findViewById<Button>(R.id.three_btn).setOnClickListener { onPress(THREE) }
+        findViewById<Button>(R.id.four_btn).setOnClickListener { onPress(FOUR) }
+        findViewById<Button>(R.id.five_btn).setOnClickListener { onPress(FIVE) }
+        findViewById<Button>(R.id.six_btn).setOnClickListener { onPress(SIX) }
+        findViewById<Button>(R.id.seven_btn).setOnClickListener { onPress(SEVEN) }
+        findViewById<Button>(R.id.eight_btn).setOnClickListener { onPress(EIGHT) }
+        findViewById<Button>(R.id.nine_btn).setOnClickListener { onPress(NINE) }
+        findViewById<Button>(R.id.zero_btn).setOnClickListener { onPress(ZERO) }
+        findViewById<Button>(R.id.plus_btn).setOnClickListener { onPress(PLUS) }
+        findViewById<Button>(R.id.minus_btn).setOnClickListener { onPress(MINUS) }
+        findViewById<Button>(R.id.divide_btn).setOnClickListener { onPress(DIVIDE) }
+        findViewById<Button>(R.id.multiply_btn).setOnClickListener { onPress(MULTIPLY) }
+        findViewById<Button>(R.id.equally_btn).setOnClickListener { onPress(EQUALLY) }
+        findViewById<Button>(R.id.dot_btn).setOnClickListener { onPress(DOT) }
+
+        savedInstanceState?.let { bundle ->
+            bundle.getString(SAVE_INSTANCE_STATE_CALCULATOR)?.let {
+                calculator.setSaveInstanceState(it)
+            }
+        }
+
         updateUI()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString(SAVE_NAME, calculator.getSaveInstanceState())
+        outState.putString(SAVE_INSTANCE_STATE_CALCULATOR, calculator.getSaveInstanceState())
     }
 
-    private fun init() {
-        val key1: Button = findViewById(R.id.key_1_btn)
-        val key2: Button = findViewById(R.id.key_2_btn)
-        val key3: Button = findViewById(R.id.key_3_btn)
-        val key4: Button = findViewById(R.id.key_4_btn)
-        val key5: Button = findViewById(R.id.key_5_btn)
-        val key6: Button = findViewById(R.id.key_6_btn)
-        val key7: Button = findViewById(R.id.key_7_btn)
-        val key8: Button = findViewById(R.id.key_8_btn)
-        val key9: Button = findViewById(R.id.key_9_btn)
-        val key0: Button = findViewById(R.id.key_0_btn)
-        val keyDot: Button = findViewById(R.id.key_dot_btn)
-        key1.setOnClickListener { onClickKey(Keys.KEY_1) }
-        key2.setOnClickListener { onClickKey(Keys.KEY_2) }
-        key3.setOnClickListener { onClickKey(Keys.KEY_3) }
-        key4.setOnClickListener { onClickKey(Keys.KEY_4) }
-        key5.setOnClickListener { onClickKey(Keys.KEY_5) }
-        key6.setOnClickListener { onClickKey(Keys.KEY_6) }
-        key7.setOnClickListener { onClickKey(Keys.KEY_7) }
-        key8.setOnClickListener { onClickKey(Keys.KEY_8) }
-        key9.setOnClickListener { onClickKey(Keys.KEY_9) }
-        key0.setOnClickListener { onClickKey(Keys.KEY_0) }
-        keyDot.setOnClickListener { onClickKey(Keys.KEY_DOT) }
-
-        val keyBackspace: Button = findViewById(R.id.key_backspace_btn)
-        keyBackspace.setOnClickListener { onClickKey(Keys.KEY_BACKSPACE) }
-
-        val keyC: Button = findViewById(R.id.key_c_btn)
-        keyC.setOnClickListener { onClickKey(Keys.KEY_C) }
-
-        val keyPlus: Button = findViewById(R.id.key_plus_btn)
-        val keyMinus: Button = findViewById(R.id.key_minus_btn)
-        val keyDivide: Button = findViewById(R.id.key_divide_btn)
-        val keyMultiply: Button = findViewById(R.id.key_multiply_btn)
-        keyPlus.setOnClickListener { onClickKey(Keys.KEY_PLUS) }
-        keyMinus.setOnClickListener { onClickKey(Keys.KEY_MINUS) }
-        keyDivide.setOnClickListener { onClickKey(Keys.KEY_DIVIDE) }
-        keyMultiply.setOnClickListener { onClickKey(Keys.KEY_MULTIPLY) }
-
-        val keyEqually: Button = findViewById(R.id.key_equally_btn)
-        keyEqually.setOnClickListener { onClickKey(Keys.KEY_EQUALLY) }
-    }
-
-
-    private fun onClickKey(key: Keys) {
-        calculator.key(key)
+    private fun onPress(button: ru.zfix27r.gettingandroid.calculator.Buttons) {
+        calculator.pressButton(button)
         updateUI()
     }
 
     private fun updateUI() {
-        val calculation: TextView = findViewById(R.id.calculation_tv)
         calculation.text = calculator.calculation
-
-        val result: TextView = findViewById(R.id.result_tv)
-        result.text = calculator.input
+        result.text = calculator.result
     }
 
     companion object {
-        const val SAVE_NAME = "save"
+        const val SAVE_INSTANCE_STATE_CALCULATOR = "calculator"
     }
 }
